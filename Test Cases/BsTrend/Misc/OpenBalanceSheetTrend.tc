@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Open up Balance Sheet Trend</description>
+   <name>OpenBalanceSheetTrend</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6f24ec49-c03a-47a8-923f-753ffdef5359</testCaseGuid>
+</TestCaseEntity>

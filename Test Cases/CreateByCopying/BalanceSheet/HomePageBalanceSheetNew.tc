@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Create new Balance Sheet by copying from the Home Page:&#xd;
+Balance Sheet tab -> &quot;New…&quot;</description>
+   <name>HomePageBalanceSheetNew</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>168e661d-7cfb-4f8d-94bc-4f03b3bf2a56</testCaseGuid>
+</TestCaseEntity>

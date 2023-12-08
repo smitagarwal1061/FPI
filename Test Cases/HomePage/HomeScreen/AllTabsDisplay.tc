@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Start-up/Home Page - All Tabs Display</description>
+   <name>AllTabsDisplay</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c86b585d-d68b-48cc-953e-1ee477b133f9</testCaseGuid>
+</TestCaseEntity>

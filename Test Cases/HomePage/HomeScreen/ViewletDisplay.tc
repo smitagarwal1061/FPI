@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Start-up/Home Page - Viewlet Display</description>
+   <name>ViewletDisplay</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d54df191-7027-4ab7-83f6-eba0afd7767b</testCaseGuid>
+</TestCaseEntity>

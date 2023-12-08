@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Secondary Level Menu Navigation - &quot;Statements&quot; hyperlink for adding/removing statements from the trend</description>
+   <name>SecondaryLevelMenuNavigationStatementsHyperlinkAddRemoveFromTrend</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>caf7dcfb-9610-4606-9a7c-86ab83a38f3f</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Create new Balance Sheet from Home Page: &#xd;
+BS Tab -> &quot;New&quot;</description>
+   <name>HomePageBsNew</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>da52b556-80d0-4796-a294-39e59e774dcf</testCaseGuid>
+</TestCaseEntity>
