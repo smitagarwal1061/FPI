@@ -1,8 +1,8 @@
 {
-  "keywordFileContentHash": "6FBA5C9685BAD317803A7991F3F0D971",
+  "keywordFileContentHash": "54BD421731F36504BBC67049A2DAF3A5",
   "keywordClasses": [
     {
-      "name": "fileDownloadUtils.FileUtils",
+      "name": "commonUtils.FileUtils",
       "keywordMethods": [
         {
           "name": "verifyFileExist",
@@ -33,7 +33,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "moveFileToProjectReportsDirectory",
@@ -64,10 +65,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

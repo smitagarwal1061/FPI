@@ -1,4 +1,4 @@
-package fileDownloadUtils
+package commonUtils
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -31,15 +31,15 @@ import java.net.URL;
 import com.kms.katalon.core.configuration.RunConfiguration;
 import internal.GlobalVariable
 
-public class fileDownload {
+public class FileUtils {
 
 	/**
 	 * Verify if file exists at download path 
 	 *
 	 * @param hyperlinkObject - link clicked to download file from web page
-	 * @param downloadPath - specify the location of downloaded file
+	 * @param downloadPath - location of downloaded file
 	 */
-	@Keyword
+	@Keyword(keywordObject = "File")
 	public static void verifyFileExist(String hyperlinkObject,String downloadPath) {
 		try {
 			//Code to get the expected file name from URL
@@ -52,14 +52,14 @@ public class fileDownload {
 			File file=new File(filePath);
 			if(file.exists())
 			{
-				KeywordUtil.markPassed("Name of the file to be downloaded :: "+expectedDownloadedFileName +" Downloaded file exists at location ::  "+filePath);
+				KeywordUtil.markPassed("File exists at location ::  "+filePath);
 			}
 			else {
 				KeywordUtil.markFailed("File does not exist at location ::  "+filePath);
 			}
 		}catch (Exception e) {
-			e.printStackTrace();
 			KeywordUtil.markFailedAndStop("Exception while finding a file");
+			e.printStackTrace();
 		}
 	}
 
@@ -69,7 +69,7 @@ public class fileDownload {
 	 * @param hyperlinkObject - link clicked to download file from web page
 	 * @param sourceFolder - source location of the file 
 	 */
-	@Keyword
+	@Keyword(keywordObject = "File")
 	public static void moveFileToProjectReportsDirectory(String hyperlinkObject,String sourceFolder) {
 		try {
 			//Code to get the expected file name from URL
@@ -89,8 +89,8 @@ public class fileDownload {
 			Files.move(source,destination);
 			KeywordUtil.logInfo("File is moved succesfully to project Reports directory");
 		}catch (Exception e) {
-			e.printStackTrace();
 			KeywordUtil.markFailedAndStop("Exception while moving a file");
+			e.printStackTrace();
 		}
 	}
 }

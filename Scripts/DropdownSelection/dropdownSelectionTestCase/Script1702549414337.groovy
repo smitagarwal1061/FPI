@@ -19,7 +19,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('https://www.expedia.co.in/Flights')
 
-CustomKeywords.'dropdownSelectionUtil.dropdownSelection.clickOnDropdownOption'('cabin_class', 'Business class')
+CustomKeywords.'commonUtils.dropdownSelection.clickOnDropdownOption'('cabin_class', 'Business class')
 
 WebUI.delay(2)
 
