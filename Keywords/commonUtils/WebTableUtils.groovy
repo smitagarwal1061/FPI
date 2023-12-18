@@ -1,22 +1,26 @@
-package webUtils;
+package commonUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.google.common.collect.MapDifference
 import com.google.common.collect.Maps
 import com.kms.katalon.core.annotation.Keyword
+import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
+import java.util.Map.Entry
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
-public class WebTableDataComparison {
+public class WebTableUtils {
 
 	/**
-	 * Compare Data of Two WebTables
-	 * @param PrimaryKey of WebTable
-	 * @param WebElement for WebTable 1
-	 * @param WebElement for WebTable 2
+	 * Compare Web Table data
+	 * @param primaryKeyName - WebTable primary key
+	 * @param webTable1 - WebElement for WebTable 1
+	 * @param webTable2 - WebElement for WebTable 1
 	 */
-	@Keyword
+	@Keyword(keywordObject = "WebTable")
+	
 	public static void compareWebTableElements(String primaryKeyName, WebElement webTable1,WebElement webTable2) {
 		try {
 			//Get WebTable records as Map
@@ -129,8 +133,8 @@ public class WebTableDataComparison {
 
 	/**
 	 * Get the WebTable as Map
-	 * @param WebElement of WebTable
-	 * @param PrimaryKey of WebTable
+	 * @param table - WebElement for WebTable
+	 * @param keyName - PrimaryKey for WebTable
 	 */
 	public static Map<String, Map<String, String>> getWebTableAsMap(WebElement table, String keyName) {
 		Map<String, Map<String, String>> webTableRecords = new LinkedHashMap();
@@ -158,15 +162,15 @@ public class WebTableDataComparison {
 					webTableRecords.put(mapKey, fileRecord);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
-			KeywordUtil.markFailed("Exception in getWebTableAsMap, unable to get WebTable as Map")
+			WebUI.comment("Exception :: " + e.getMessage());
+            KeywordUtil.markFailedAndStop("Exception in getWebTableAsMap, unable to get Table as Map");
 		}
 		return webTableRecords;
 	}
 
 	/**
 	 * Read the WebTable Data records
-	 * @param WebElement of WebTable
+	 * @param tableElement - WebElement for WebTable
 	 */
 	public static List<String> readWebTableData(WebElement tableElement) {
 		List<String> tableData = new ArrayList<>();
@@ -205,5 +209,43 @@ public class WebTableDataComparison {
 			KeywordUtil.markFailed("Exception in readWebTableData, unable to read data from WebTable")
 		}
 		return tableData;
+	}
+	
+
+	@Keyword
+	/**
+	 * Get Web table cell value
+	 * @param webTableName - TestObject for Web Table
+	 * @param primaryKey - Primary key for Web Table
+	 * @param rowName - Row Name of WebTable
+	 * @param columnName - ColumnName of WebTable
+	 */
+	public static String getWebTableCellValue(TestObject webTableName,String primaryKey,String rowName,String columnName) {
+		try {
+			
+			String cellValue;
+			WebElement webTable = WebUI.findWebElement(webTableName, 0)
+			Map<String, Map<String, String>> webTableMap = getWebTableAsMap(webTable, primaryKey);
+
+			for (Entry<String, Map<String, String>> entry : webTableMap.entrySet()) {
+				if (entry.getKey().equals(rowName)) {
+					cellValue = entry.getValue().get(columnName);
+					break;
+				}
+			}
+
+			if (cellValue != null) {
+				KeywordUtil.markPassed("Cell Value for row name: '" + rowName + "' and column name: '" + columnName+"' is '"+cellValue+"'")
+			} else {
+				KeywordUtil.markFailedAndStop("Cell with row name '" + rowName + "' and column name '" + columnName + "' not found in the table.")
+			}
+
+			return cellValue;
+		}
+		catch (Exception e)
+		{
+			WebUI.comment("Exception :: " + e.getMessage())
+			KeywordUtil.markFailedAndStop("Exception while fetching cell value from WebTable");
+		}
 	}
 }

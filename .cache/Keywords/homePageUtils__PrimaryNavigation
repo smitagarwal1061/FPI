@@ -20,10 +20,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Select option from primary navigation menu\r\n\t * @param navigationPathInDropdown - path to navigate in primary navigation menu\r\n\t *\r\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
