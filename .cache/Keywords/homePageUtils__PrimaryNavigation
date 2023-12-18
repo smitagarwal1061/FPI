@@ -1,0 +1,29 @@
+{
+  "keywordFileContentHash": "68704FFEBB0CCB8FD867764325F6AE5C",
+  "keywordClasses": [
+    {
+      "name": "homePageUtils.PrimaryNavigation",
+      "keywordMethods": [
+        {
+          "name": "clickOptionInPrimaryNavigationMenu",
+          "parameters": [
+            {
+              "name": "navigationPathInDropdown",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}

@@ -1,0 +1,75 @@
+{
+  "keywordFileContentHash": "3DFAA7A8360B43BA1ED440313058F17A",
+  "keywordClasses": [
+    {
+      "name": "commonUtils.FileUtils",
+      "keywordMethods": [
+        {
+          "name": "verifyFileExist",
+          "parameters": [
+            {
+              "name": "hyperlinkObject",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "downloadPath",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Verify if file exists at download path \r\n\t *\r\n\t * @param hyperlinkObject - link clicked to download file from web page\r\n\t * @param downloadPath - location of downloaded file\r\n\t */"
+        },
+        {
+          "name": "moveFileToProjectReportsDirectory",
+          "parameters": [
+            {
+              "name": "hyperlinkObject",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "sourceFolder",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Move the file to project reports directory\r\n\t *\r\n\t * @param hyperlinkObject - link clicked to download file from web page\r\n\t * @param sourceFolder - source location of the file \r\n\t */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
