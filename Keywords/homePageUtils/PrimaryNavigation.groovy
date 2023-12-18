@@ -23,8 +23,8 @@ import internal.GlobalVariable
 
 public class PrimaryNavigation {
 	/**
-	 * Select option from dropdown
-	 * @param navigationPathInDropdown - for navigation through dropdown
+	 * Select option from primary navigation menu
+	 * @param navigationPathInDropdown - path to navigate in primary navigation menu
 	 *
 	 */
 	@Keyword(keywordObject = "HomePage")
