@@ -58,8 +58,8 @@ public class FileUtils {
 				KeywordUtil.markFailed("File does not exist at location ::  "+filePath);
 			}
 		}catch (Exception e) {
-			KeywordUtil.markFailedAndStop("Exception while finding a file");
-			e.printStackTrace();
+			WebUI.comment("Exception :: " + e.getMessage())
+			KeywordUtil.markFailedAndStop("Exception while finding a file");		
 		}
 	}
 
@@ -89,8 +89,8 @@ public class FileUtils {
 			Files.move(source,destination);
 			KeywordUtil.logInfo("File is moved succesfully to project Reports directory");
 		}catch (Exception e) {
+			WebUI.comment("Exception :: " + e.getMessage())
 			KeywordUtil.markFailedAndStop("Exception while moving a file");
-			e.printStackTrace();
 		}
 	}
 }

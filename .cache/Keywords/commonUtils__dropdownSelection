@@ -1,0 +1,43 @@
+{
+  "keywordFileContentHash": "B60391C2F3DBEC842E09C7131EAABEC8",
+  "keywordClasses": [
+    {
+      "name": "commonUtils.dropdownSelection",
+      "keywordMethods": [
+        {
+          "name": "clickOnDropdownOption",
+          "parameters": [
+            {
+              "name": "parentDropdownOption",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "optionToSelectText",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Select option from dropdown\r\n\t *\r\n\t * @param parentDropdownOption  object for parent dropdown\r\n\t * @param  optionToSelectText  object for option to be selected inside dropdown\r\n\t */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

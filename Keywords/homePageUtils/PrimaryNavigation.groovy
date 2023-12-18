@@ -1,4 +1,4 @@
-package commonUtils
+package homePageUtils
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -21,23 +21,25 @@ import com.kms.katalon.core.util.KeywordUtil
 
 import internal.GlobalVariable
 
-public class dropdownSelection {
+public class PrimaryNavigation {
 	/**
 	 * Select option from dropdown
+	 * @param navigationPathInDropdown - for navigation through dropdown
 	 *
-	 * @param parentDropdownOption  object for parent dropdown
-	 * @param  optionToSelectText  object for option to be selected inside dropdown
 	 */
-	@Keyword
-	public static void clickOnDropdownOption(String parentDropdownOption, String optionToSelectText) {
+	@Keyword(keywordObject = "HomePage")
+	public static void clickOptionInPrimaryNavigationMenu(String navigationPathInDropdown) {
 		try {
-			//To click on parent dropdown option
-			WebUI.findWebElement(findTestObject('Object Repository/PageDropdownSelection/parentDropdown', ['parentOptionToSelect' :parentDropdownOption ])).click();
-			//To click on option inside dropdown
-			WebUI.findWebElement(findTestObject('Object Repository/PageDropdownSelection/childOptionsInDropdown', ['optionToSelect' :optionToSelectText ])).click();
+			//Split the string from ->
+			String[] arrOfString= navigationPathInDropdown.split("->");
+
+			//for loop based on substrings created from parameter
+			for(int i=0;i<arrOfString.length;i++) {
+				WebUI.findWebElement(findTestObject('Object Repository/PageHomePage/primaryMenuNavigation', ['menuOption' :arrOfString[i] ])).click();
+			}
 		}catch (Exception e) {
-			WebUI.comment("Caught an Exception :: " + e.getMessage())
-			KeywordUtil.markFailedAndStop("Exception while clicking on dropdown options");
+			WebUI.comment("Exception :: " + e.getMessage())
+			KeywordUtil.markFailedAndStop("Exception while clicking on option in Primary Navigation Menu");
 		}
 	}
 }

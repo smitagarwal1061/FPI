@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>childOptionsInDropdown</name>
+   <name>primaryMenuNavigation</name>
    <tag></tag>
-   <elementGuidId>4e3a7d1f-47e8-4774-b1dc-ccde4c0fea5a</elementGuidId>
+   <elementGuidId>b9ee12e6-49a9-4445-b63d-78dc71d9922b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button/span[text()='${optionToSelect}']</value>
+         <value>//a[text()='${menuOption}']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
