@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "89D8AFC21B8B6845E29B4908386F1B66",
+  "keywordFileContentHash": "B2512B63C64C7978E6387A7E652F5250",
   "keywordClasses": [
     {
       "name": "commonUtils.WebTableUtils",
@@ -21,11 +21,11 @@
               }
             },
             {
-              "name": "webTable1",
+              "name": "webTableName1",
               "initialExpression": "",
               "type": {
-                "fullClassName": "org.openqa.selenium.WebElement",
-                "unresolvedClassName": "WebElement",
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": false,
@@ -34,11 +34,11 @@
               }
             },
             {
-              "name": "webTable2",
+              "name": "webTableName2",
               "initialExpression": "",
               "type": {
-                "fullClassName": "org.openqa.selenium.WebElement",
-                "unresolvedClassName": "WebElement",
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
                 "isArray": false,
                 "isGnericsPlaceHolder": false,
                 "hasImmutableClassName": false,
@@ -46,7 +46,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Compare Web Table data\r\n\t * @param primaryKeyName - WebTable primary key\r\n\t * @param webTable1 - WebElement for WebTable 1\r\n\t * @param webTable2 - WebElement for WebTable 1\r\n\t */"
         },
         {
           "name": "getWebTableCellValue",
@@ -103,10 +104,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

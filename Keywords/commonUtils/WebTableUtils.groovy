@@ -20,9 +20,11 @@ public class WebTableUtils {
 	 * @param webTable2 - WebElement for WebTable 1
 	 */
 	@Keyword(keywordObject = "WebTable")
-	
-	public static void compareWebTableElements(String primaryKeyName, WebElement webTable1,WebElement webTable2) {
+
+	public static void compareWebTableElements(String primaryKeyName, TestObject webTableName1, TestObject webTableName2) {
 		try {
+			WebElement webTable1 = WebUI.findWebElement(webTableName1, 0)
+			WebElement webTable2 = WebUI.findWebElement(webTableName2, 0)
 			//Get WebTable records as Map
 			Map<String, Map<String, String>> actMap=getWebTableAsMap(webTable1, primaryKeyName);
 			Map<String, Map<String, String>> expMap=getWebTableAsMap(webTable2, primaryKeyName);
@@ -82,9 +84,9 @@ public class WebTableUtils {
 
 	/**
 	 * Get the Expected WebTable Map records missing from Actual WebTable Map
-	 * @param PrimaryKey of WebTable
-	 * @param Actual WebTable Map object
-	 * @param Expected WebTable Map object
+	 * @param primaryKeyName - Primary Key of WebTable
+	 * @param actMap - Actual WebTable Map object
+	 * @param expMap - Expected WebTable Map object
 	 */
 	public static void getExpRecordMissingFrmActData(String primaryKeyName, Map<String, Map<String, String>> actMap,
 			Map<String, Map<String, String>> expMap) {
@@ -163,7 +165,7 @@ public class WebTableUtils {
 			}
 		} catch (Exception e) {
 			WebUI.comment("Exception :: " + e.getMessage());
-            KeywordUtil.markFailedAndStop("Exception in getWebTableAsMap, unable to get Table as Map");
+			KeywordUtil.markFailedAndStop("Exception in getWebTableAsMap, unable to get Table as Map");
 		}
 		return webTableRecords;
 	}
@@ -175,23 +177,25 @@ public class WebTableUtils {
 	public static List<String> readWebTableData(WebElement tableElement) {
 		List<String> tableData = new ArrayList<>();
 		try {
+			String rowData = null;
+			tableData.add(rowData);
+			List<WebElement> headers = tableElement.findElements(By.xpath("tr/th"));
+			int count = 0;
+			for (WebElement header : headers) {
+				// Extract data from each header and add it to the list
+				if (count == 0) {
+					rowData = header.getText();
+				} else {
+					rowData = rowData + "," + header.getText();
+				}
+				count++;
+				tableData.add(rowData);
+			}
 			// Get all rows
-			List<WebElement> rows = tableElement.findElements(By.tagName("tr"));
+			List<WebElement> rows = tableElement.findElements(By.tagName("tr")).drop(1);
 			for (WebElement row : rows) {
 				// Get all cells in the current row
-				String rowData = null;
-				List<WebElement> headers = row.findElements(By.tagName("th"));
 				List<WebElement> cells = row.findElements(By.tagName("td"));
-				int count = 0;
-				for (WebElement header : headers) {
-					// Extract data from each header and add it to the list
-					if (count == 0) {
-						rowData = header.getText();
-					} else {
-						rowData = rowData + "," + header.getText();
-					}
-					count++;
-				}
 				for (WebElement cell : cells) {
 					// Extract data from each cell and add it to the list
 					if (count == 0) {
@@ -210,9 +214,9 @@ public class WebTableUtils {
 		}
 		return tableData;
 	}
-	
 
-	@Keyword
+
+	@Keyword(keywordObject = "WebTable")
 	/**
 	 * Get Web table cell value
 	 * @param webTableName - TestObject for Web Table
@@ -222,7 +226,7 @@ public class WebTableUtils {
 	 */
 	public static String getWebTableCellValue(TestObject webTableName,String primaryKey,String rowName,String columnName) {
 		try {
-			
+
 			String cellValue;
 			WebElement webTable = WebUI.findWebElement(webTableName, 0)
 			Map<String, Map<String, String>> webTableMap = getWebTableAsMap(webTable, primaryKey);
@@ -242,8 +246,7 @@ public class WebTableUtils {
 
 			return cellValue;
 		}
-		catch (Exception e)
-		{
+		catch (Exception e) {
 			WebUI.comment("Exception :: " + e.getMessage())
 			KeywordUtil.markFailedAndStop("Exception while fetching cell value from WebTable");
 		}
