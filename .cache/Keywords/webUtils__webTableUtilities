@@ -1,8 +1,8 @@
 {
-  "keywordFileContentHash": "D7764B47D8D38E9284907256FAAF12C5",
+  "keywordFileContentHash": "F79C1844691984B8175DC21E1F0C0389",
   "keywordClasses": [
     {
-      "name": "commonUtils.WebTableUtils",
+      "name": "webUtils.webTableUtilities",
       "keywordMethods": [
         {
           "name": "compareWebTable",

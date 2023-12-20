@@ -1,8 +1,12 @@
 {
-  "keywordFileContentHash": "D7764B47D8D38E9284907256FAAF12C5",
+  "keywordFileContentHash": "4865FB8D930A3C5F6C23F8A1FC87A810",
   "keywordClasses": [
     {
-      "name": "commonUtils.WebTableUtils",
+      "name": "webUtils.WebTableUtils",
+      "keywordMethods": []
+    },
+    {
+      "name": "webUtils.WebTableUtils",
       "keywordMethods": [
         {
           "name": "compareWebTable",
@@ -46,7 +50,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Compare Web Table data\r\n\t * @param primaryKeyName - WebTable primary key\r\n\t * @param webTableNameOne - Test Object for WebTable 1 referred by OR\r\n\t * @param webTableNameTwo - Test Object for WebTable 2 referred by OR\r\n\t */"
         },
         {
           "name": "getWebTableCellValue",
@@ -103,10 +108,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
