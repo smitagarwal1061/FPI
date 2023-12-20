@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;content&quot;]/iframe</value>
+         <value>//*[@id=&quot;content&quot;]/iframe </value>
       </entry>
       <entry>
          <key>BASIC</key>

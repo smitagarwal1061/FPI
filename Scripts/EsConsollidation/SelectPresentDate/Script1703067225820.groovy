@@ -30,3 +30,6 @@ WebUI.click(findTestObject('SelectDate/dateField'))
 String presentDate = CustomKeywords.'dateUtils.calenderDate.selectPresentDate'()
 
 WebUI.sendKeys(findTestObject('SelectDate/dateField'), presentDate+ Keys.ENTER)
+
+
+

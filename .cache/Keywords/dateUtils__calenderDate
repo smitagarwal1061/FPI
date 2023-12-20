@@ -1,9 +1,15 @@
 {
-  "keywordFileContentHash": "6CA6E03AAA2AFCABC6ECF45E1F384AEC",
+  "keywordFileContentHash": "47AF086DED7C8F99BB2C6B61592E4873",
   "keywordClasses": [
     {
       "name": "dateUtils.calenderDate",
-      "keywordMethods": []
+      "keywordMethods": [
+        {
+          "name": "selectPresentDate",
+          "parameters": [],
+          "javadoc": "/**\r\n\t * Select present day date\r\n\t * @return String - present date\r\n\t *\r\n\t */"
+        }
+      ]
     }
   ],
   "javadocParsed": true
