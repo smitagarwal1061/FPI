@@ -1,12 +1,8 @@
 {
-  "keywordFileContentHash": "4865FB8D930A3C5F6C23F8A1FC87A810",
+  "keywordFileContentHash": "2E3DD06520F545D2A036EEA642740063",
   "keywordClasses": [
     {
-      "name": "webUtils.WebTableUtils",
-      "keywordMethods": []
-    },
-    {
-      "name": "webUtils.WebTableUtils",
+      "name": "commonUtils.WebTableUtils",
       "keywordMethods": [
         {
           "name": "compareWebTable",
@@ -25,7 +21,7 @@
               }
             },
             {
-              "name": "webTableNameOne",
+              "name": "webTableObjectOne",
               "initialExpression": "",
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",
@@ -38,7 +34,7 @@
               }
             },
             {
-              "name": "webTableNameTwo",
+              "name": "webTableObjectTwo",
               "initialExpression": "",
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",
@@ -51,13 +47,13 @@
               }
             }
           ],
-          "javadoc": "/**\r\n\t * Compare Web Table data\r\n\t * @param primaryKeyName - WebTable primary key\r\n\t * @param webTableNameOne - Test Object for WebTable 1 referred by OR\r\n\t * @param webTableNameTwo - Test Object for WebTable 2 referred by OR\r\n\t */"
+          "javadoc": "/**\r\n\t * Compare Web Table data\r\n\t * @param primaryKeyName - WebTable primary key\r\n\t * @param webTableObjectOne - Test Object for WebTable 1 referred by OR\r\n\t * @param webTableObjectTwo - Test Object for WebTable 2 referred by OR\r\n\t */"
         },
         {
           "name": "getWebTableCellValue",
           "parameters": [
             {
-              "name": "webTableName",
+              "name": "webTableObject",
               "initialExpression": "",
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",

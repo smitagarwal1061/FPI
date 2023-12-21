@@ -1,8 +1,8 @@
 {
-  "keywordFileContentHash": "7BB8E8EE8D1DA2E6DB7257E60F34B27D",
+  "keywordFileContentHash": "F79C1844691984B8175DC21E1F0C0389",
   "keywordClasses": [
     {
-      "name": "commonUtils.WebTableUtilities",
+      "name": "webUtils.webTableUtilities",
       "keywordMethods": [
         {
           "name": "compareWebTable",
@@ -21,7 +21,7 @@
               }
             },
             {
-              "name": "webTableObjectOne",
+              "name": "webTableNameOne",
               "initialExpression": "",
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",
@@ -34,7 +34,7 @@
               }
             },
             {
-              "name": "webTableObjectTwo",
+              "name": "webTableNameTwo",
               "initialExpression": "",
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",
@@ -46,14 +46,13 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Compare Web Table data\r\n\t * @param primaryKeyName - WebTable primary key\r\n\t * @param webTableObjectOne - Test Object for WebTable 1 referred by OR\r\n\t * @param webTableObjectTwo - Test Object for WebTable 2 referred by OR\r\n\t */"
+          ]
         },
         {
           "name": "getWebTableCellValue",
           "parameters": [
             {
-              "name": "webTableObject",
+              "name": "webTableName",
               "initialExpression": "",
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",
@@ -104,11 +103,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

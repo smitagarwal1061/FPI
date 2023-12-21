@@ -23,10 +23,11 @@ WebUI.maximizeWindow()
 
 WebUI.executeJavaScript('window.scrollBy(0,750)', [])
 
-String cellValue = CustomKeywords.'commonUtils.WebTableUtils.getWebTableCellValue'(findTestObject('WebTable/webTable1'), 
-    'ID', '3', 'NAME')
+String cellValue = CustomKeywords.'commonUtils.WebTableUtilities.getWebTableCellValue'(findTestObject('WebTable/webTable1'), 
+    'ID', '1', 'NAME')
 
 println(cellValue)
 
-CustomKeywords.'commonUtils.WebTableUtils.compareWebTable'('ID', findTestObject('WebTable/webTable1'), findTestObject('WebTable/webTable1'))
+CustomKeywords.'commonUtils.WebTableUtilities.compareWebTable'('ID', findTestObject('WebTable/webTable1'), findTestObject(
+        'WebTable/webTable1'))
 
