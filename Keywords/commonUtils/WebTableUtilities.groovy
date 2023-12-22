@@ -97,12 +97,12 @@ public class WebTableUtilities {
 	}
 
 	/**
-	 * Report the WebTable Map records differences
+	 * Report mismatched records in Map
 	 * @param recordKeyName - Key Name of Table record
 	 * @param recordKeyValue - Key Value of Table record
-	 * @param entriesDiffering - Entries differing Map object
-	 * @param entriesOnlyOnLeft - Record entries differing Right Table Map object
-	 * @param entriesOnlyOnRight - Record entries differing of Left Table Map object
+	 * @param entriesDiffering - Mismatched records in Map
+	 * @param entriesOnlyOnLeft - Records present only in actual Map
+	 * @param entriesOnlyOnRight - Records present only in expected Map
 	 */
 
 	public static void reportMapDifference(String recordKeyName, String recordKeyValue,
@@ -205,7 +205,7 @@ public class WebTableUtilities {
 	/**
 	 * Get Web table cell value
 	 * @param webTableObject - TestObject for Web Table
-	 * @param primaryKey - Primary key for Web Table
+	 * @param primaryKey - Prima]e
 	 * @param primaryKeyValue - primary key value of row
 	 * @param columnName  - column to fetch cell value
 	 */
