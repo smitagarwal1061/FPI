@@ -6,12 +6,12 @@
    <elementGuidId>a23fcccc-2f5a-4f55-bcbc-232f9f5b0069</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>#datepicker2</value>
-      </entry>
-      <entry>
          <key>XPATH</key>
          <value>//input[@id='datepicker2']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#datepicker2</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>9b2828ed-e32a-411a-a7b2-282c4299c581</webElementGuid>
+      <webElementGuid>e0984816-1abd-4f0e-9727-bc9152016777</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,7 +30,7 @@
       <name>type</name>
       <type>Main</type>
       <value>text</value>
-      <webElementGuid>a34907bb-b20d-40f5-ae00-5bae1b68a831</webElementGuid>
+      <webElementGuid>a42a284c-1899-48bb-a85a-b56813a6e4d3</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>id</name>
       <type>Main</type>
       <value>datepicker2</value>
-      <webElementGuid>bf321f6b-9408-4b10-a242-57c98f38df03</webElementGuid>
+      <webElementGuid>2dcd8c01-5556-4187-9a04-47b2b302b9e0</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>class</name>
       <type>Main</type>
       <value>form-control is-datepick</value>
-      <webElementGuid>b29d9e81-a0c2-49b3-b65c-d453ee322398</webElementGuid>
+      <webElementGuid>8fa3260c-3731-474a-81be-c1c6d5f8f7f8</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;datepicker2&quot;)</value>
-      <webElementGuid>e3bc7268-ea1a-4be8-9c38-f16c69004ddc</webElementGuid>
+      <webElementGuid>c15e3b4d-4223-452f-8471-417347061124</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>//input[@id='datepicker2']</value>
-      <webElementGuid>bff1b01b-72a8-4f87-89b0-ca7c53aff564</webElementGuid>
+      <webElementGuid>6f1b3ee5-f724-434c-95b5-67cdbf558f6b</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[3]/input</value>
-      <webElementGuid>91ae23e4-a10b-4839-841d-1ac4ab05c2ce</webElementGuid>
+      <webElementGuid>fe462e3e-daef-4e4e-9228-3135b0fecf7d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,6 +78,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//input[@type = 'text' and @id = 'datepicker2']</value>
-      <webElementGuid>050c0c9b-03a3-483f-a8dd-b96bde542ae0</webElementGuid>
+      <webElementGuid>d806aa96-1c8e-4708-b796-78d6b2fdff55</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

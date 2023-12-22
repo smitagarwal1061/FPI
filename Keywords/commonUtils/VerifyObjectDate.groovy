@@ -60,7 +60,7 @@ public class VerifyObjectDate {
 					KeywordUtil.markPassed("The date in date field matches with expected date");
 				}
 				else {
-					KeywordUtil.markPassed("The date in date field does not match with expected date");
+					KeywordUtil.markFailed("The date in date field does not match with expected date");
 				}
 			}
 		}catch(Exception e) {
