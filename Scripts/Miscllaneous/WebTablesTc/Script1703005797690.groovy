@@ -17,17 +17,17 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('https://www.geeksforgeeks.org/compare-and-find-differences-between-two-tables-in-sql/')
+WebUI.openBrowser('https://rahulshettyacademy.com/AutomationPractice/')
 
 WebUI.maximizeWindow()
 
 WebUI.executeJavaScript('window.scrollBy(0,750)', [])
 
-String cellValue = CustomKeywords.'commonUtils.WebTableUtilities.getWebTableCellValue'(findTestObject('WebTable/webTable1'), 
-    'ID', '1', 'NAME')
+String cellValue = CustomKeywords.'commonUtils.WebTableUtils.getWebTableCellValue'(findTestObject('Object Repository/WebTable/webTable2'), 
+    'Name', 'Alex', 'Amount')
 
 println(cellValue)
 
-CustomKeywords.'commonUtils.WebTableUtilities.compareWebTable'('ID', findTestObject('WebTable/webTable1'), findTestObject(
-        'WebTable/webTable1'))
+CustomKeywords.'commonUtils.WebTableUtils.compareWebTable'('Name', findTestObject('Object Repository/WebTable/webTable3'), findTestObject(
+        'WebTable/webTable2'))
 
