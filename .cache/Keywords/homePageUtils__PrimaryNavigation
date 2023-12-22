@@ -21,7 +21,7 @@
               }
             }
           ],
-          "javadoc": "/**\n\t * Select option from primary navigation menu\n\t * @param navigationPathInDropdown - path to navigate in primary navigation menu\n\t *\n\t */"
+
         }
       ]
     }
