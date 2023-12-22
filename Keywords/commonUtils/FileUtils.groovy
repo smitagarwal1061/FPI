@@ -59,7 +59,7 @@ public class FileUtils {
 			}
 		}catch (Exception e) {
 			WebUI.comment("Exception :: " + e.getMessage())
-			KeywordUtil.markFailedAndStop("Exception while finding a file");		
+			KeywordUtil.markFailedAndStop("Exception while finding a file");
 		}
 	}
 
