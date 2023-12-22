@@ -1,0 +1,56 @@
+{
+  "keywordFileContentHash": "DF6A587423DA0F3385921F6B1B17310E",
+  "keywordClasses": [
+    {
+      "name": "commonUtils.WebTableDataComparison",
+      "keywordMethods": [
+        {
+          "name": "compareWebTableElements",
+          "parameters": [
+            {
+              "name": "primaryKeyName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "webTable1",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "org.openqa.selenium.WebElement",
+                "unresolvedClassName": "WebElement",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "webTable2",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "org.openqa.selenium.WebElement",
+                "unresolvedClassName": "WebElement",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * Compare Data of Two WebTables\r\n\t * @param PrimaryKey of WebTable\r\n\t * @param WebElement for WebTable 1\r\n\t * @param WebElement for WebTable 2\r\n\t */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
