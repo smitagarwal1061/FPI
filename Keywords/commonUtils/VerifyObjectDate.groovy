@@ -9,6 +9,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.keyword.builtin.VerifyEqualKeyword
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
@@ -32,36 +33,24 @@ import internal.GlobalVariable
 public class VerifyObjectDate {
 	/**
 	 * Verify date
-	 * @param objDateField- locator for date field
-	 * @param expectedDate- date to enter in date field
+	 * @param objDateField- object for date field
+	 * @param expectedDate- PREV_MONTH_LASTDAY or date to enter in date field PREV_MONTH_LASTDAY
 	 */
 	@Keyword
-	public static void verifyDate(TestObject objDateField, String expectedDate) {
+	public static void verifyDisplayedDate(TestObject objDateField, String expectedDate) {
 		try {
 			DateTimeFormatter pattern = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-			WebElement dateField = WebUI.findWebElement(objDateField);
-			String dateFieldString = dateField.getAttribute("value");
-			KeywordUtil.logInfo("The date in date field is :: "+dateFieldString)
+			String dateField=WebUI.findWebElement(objDateField).getAttribute("value");
+			KeywordUtil.logInfo("The date in date field is :: "+dateField)
 			if(expectedDate.equals("PREV_MONTH_LASTDAY")) {
-
-				LocalDate lastDayOfPreviousMonth= LocalDate.now().minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
-				String lastDayOfPreviousMonthString=lastDayOfPreviousMonth.format(pattern);
-				KeywordUtil.logInfo("The last date of previous month is :: "+lastDayOfPreviousMonthString)
-				if(lastDayOfPreviousMonthString.equals(dateFieldString)) {
-					KeywordUtil.markPassed("The date in date field is the last day of previous month.");
-				}
-				else {
-					KeywordUtil.markFailed("The date in date field is not the last day of previous month.");
-				}
+				String lastDayOfPreviousMonth=(LocalDate.now().minusMonths(1).with(TemporalAdjusters.lastDayOfMonth())).format(pattern);
+				KeywordUtil.logInfo("The last date of previous month is :: "+lastDayOfPreviousMonth)
+				//To compare actual and expected date
+				WebUI.verifyMatch(dateField, lastDayOfPreviousMonth, false)
 			}
 			else {
-				if(expectedDate.equals(dateFieldString)) {
-					KeywordUtil.logInfo("The expected date is :: "+expectedDate)
-					KeywordUtil.markPassed("The date in date field matches with expected date");
-				}
-				else {
-					KeywordUtil.markFailed("The date in date field does not match with expected date");
-				}
+				KeywordUtil.logInfo("The expected date is :: "+expectedDate)
+				WebUI.verifyMatch(dateField, expectedDate, false)
 			}
 		}catch(Exception e) {
 			WebUI.comment("Exception :: " + e.getMessage())

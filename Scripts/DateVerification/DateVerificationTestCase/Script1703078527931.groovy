@@ -25,12 +25,10 @@ WebUI.setText(findTestObject('Object Repository/Page_Datepicker/input_DatePicker
 
 WebUI.click(findTestObject('Page_Datepicker/input_DatePicker Enabled_datepicker2'))
 
-CustomKeywords.'commonUtils.VerifyObjectDate.verifyDate'(findTestObject('Page_Datepicker/input_DatePicker Enabled_datepicker2'), 
+CustomKeywords.'commonUtils.VerifyObjectDate.verifyDisplayedDate'(findTestObject('Page_Datepicker/input_DatePicker Enabled_datepicker2'), 
     'PREV_MONTH_LASTDAY')
 
 WebUI.delay(2)
 
 WebUI.closeBrowser()
-
-
 

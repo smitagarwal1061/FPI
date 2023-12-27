@@ -1,11 +1,11 @@
 {
-  "keywordFileContentHash": "6AF469706DB1B32BB2CCF4B20BEBD390",
+  "keywordFileContentHash": "FD0168841F7FCDDD816C6CBDC292D50D",
   "keywordClasses": [
     {
       "name": "commonUtils.VerifyObjectDate",
       "keywordMethods": [
         {
-          "name": "verifyDate",
+          "name": "verifyDisplayedDate",
           "parameters": [
             {
               "name": "objDateField",
@@ -34,7 +34,7 @@
               }
             }
           ],
-          "javadoc": ""
+          "javadoc": "/**\r\n\t * Verify date\r\n\t * @param objDateField- object for date field\r\n\t * @param expectedDate- PREV_MONTH_LASTDAY or date to enter in date field PREV_MONTH_LASTDAY\r\n\t */"
         }
       ]
     }
