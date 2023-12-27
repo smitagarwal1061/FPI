@@ -1,0 +1,42 @@
+{
+  "keywordFileContentHash": "C8FC5D7DC9FA883E4FA4532A2A22576B",
+  "keywordClasses": [
+    {
+      "name": "commonUtils.DatesOrderCheck",
+      "keywordMethods": [
+        {
+          "name": "verifyDatesinDescendingOrder",
+          "parameters": [
+            {
+              "name": "tableObject",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "columnName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}
