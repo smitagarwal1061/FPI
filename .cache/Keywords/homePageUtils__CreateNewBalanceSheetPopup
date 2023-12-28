@@ -1,11 +1,11 @@
 {
-  "keywordFileContentHash": "519F74733013DFB7ABC7E89C13A529DE",
+  "keywordFileContentHash": "5A617384ADD06B86317FC8A8A185C083",
   "keywordClasses": [
     {
       "name": "homePageUtils.CreateNewBalanceSheetPopup",
       "keywordMethods": [
         {
-          "name": "verifyDisplayedDate",
+          "name": "verifyDefaultDate",
           "parameters": [
             {
               "name": "balanceSheetDateObject",
