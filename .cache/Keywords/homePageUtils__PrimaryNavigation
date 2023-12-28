@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "68704FFEBB0CCB8FD867764325F6AE5C",
+  "keywordFileContentHash": "EE6B496E954F946159840EB7676DDCC5",
   "keywordClasses": [
     {
       "name": "homePageUtils.PrimaryNavigation",
@@ -20,11 +20,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Select option from primary navigation menu\r\n\t * @param navigationPathInDropdown - path to navigate in primary navigation menu\r\n\t *\r\n\t */"
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

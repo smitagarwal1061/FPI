@@ -32,10 +32,10 @@ public class PrimaryNavigation {
 		try {
 			//Split the string from ->
 			String[] arrOfString= navigationPathInDropdown.split("->");
-
+			
 			//for loop based on substrings created from parameter
 			for(int i=0;i<arrOfString.length;i++) {
-				WebUI.findWebElement(findTestObject('Object Repository/PageHomePage/primaryMenuNavigation', ['menuOption' :arrOfString[i] ])).click();
+				WebUI.findWebElement(findTestObject('Object Repository/PageHomePage/primaryMenuNavigation', ['menuOption' :arrOfString[i]])).click();
 			}
 		}catch (Exception e) {
 			WebUI.comment("Exception :: " + e.getMessage())
