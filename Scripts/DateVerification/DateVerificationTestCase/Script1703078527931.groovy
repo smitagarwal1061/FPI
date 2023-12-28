@@ -21,11 +21,11 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://demo.automationtesting.in/Datepicker.html')
 
-WebUI.setText(findTestObject('Object Repository/Page_Datepicker/input_DatePicker Enabled_datepicker2'), '11/30/2023')
+WebUI.setText(findTestObject('PageBalanceSheeet/datefieldCreateBS'), '11/30/2023')
 
-WebUI.click(findTestObject('Page_Datepicker/input_DatePicker Enabled_datepicker2'))
+WebUI.click(findTestObject('PageBalanceSheeet/datefieldCreateBS'))
 
-CustomKeywords.'commonUtils.VerifyObjectDate.verifyDisplayedDate'(findTestObject('Page_Datepicker/input_DatePicker Enabled_datepicker2'), 
+CustomKeywords.'commonUtils.CreateNewBalanceSheetPopup.verifyDisplayedDate'(findTestObject('PageBalanceSheeet/datefieldCreateBS'), 
     'PREV_MONTH_LASTDAY')
 
 WebUI.delay(2)

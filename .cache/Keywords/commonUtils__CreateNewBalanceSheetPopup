@@ -1,11 +1,11 @@
 {
-  "keywordFileContentHash": "EEEB3C3BC2E5B6C6545A6036CA7D4E29",
+  "keywordFileContentHash": "43C157F9BC0C2F243A89A8C2D0979FA3",
   "keywordClasses": [
     {
       "name": "commonUtils.CreateNewBalanceSheetPopup",
       "keywordMethods": [
         {
-          "name": "verifyDate",
+          "name": "verifyDisplayedDate",
           "parameters": [
             {
               "name": "balanceSheetDateObject",
@@ -33,10 +33,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Verify default date\r\n\t * @param balanceSheetDateObject - object referenced from object repository\r\n\t * @param expectedDate - \"PREV_MONTH_LASTDAY\"/any expected date in \"MM/dd/yyyy\"\r\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

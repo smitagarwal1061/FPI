@@ -178,7 +178,7 @@ public class WebTableUtils {
 		try {
 			String rowData = null;
 			int count = 0
-			
+
 			// Get all rows
 			List<WebElement> rows = tableElement.findElements(By.tagName("tr"));
 
@@ -194,7 +194,7 @@ public class WebTableUtils {
 				count++;
 			}
 			tableData.add(rowData);
-			
+
 			//Get data of table rows
 			for (int i = 1; i < rows.size(); i++) {
 				// Get all cells in the current row

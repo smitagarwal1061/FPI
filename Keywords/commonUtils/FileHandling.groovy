@@ -31,7 +31,7 @@ import java.net.URL;
 import com.kms.katalon.core.configuration.RunConfiguration;
 import internal.GlobalVariable
 
-public class FileUtils {
+public class FileHandling {
 
 	/**
 	 * Verify if file exists at download path 
