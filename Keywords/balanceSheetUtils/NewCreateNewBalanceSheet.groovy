@@ -1,4 +1,4 @@
-package homePageUtils
+package balanceSheetUtils
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -11,8 +11,7 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
-
-public class CreateNewBalanceSheetPopup {
+public class NewCreateNewBalanceSheet {
 	/**
 	 * Verify default date
 	 * @param balanceSheetDateObject - object referenced from object repository

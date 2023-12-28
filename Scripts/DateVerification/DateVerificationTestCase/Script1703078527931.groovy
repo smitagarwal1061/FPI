@@ -25,7 +25,7 @@ WebUI.setText(findTestObject('PageBalanceSheeet/datefieldCreateBS'), '11/30/2023
 
 WebUI.click(findTestObject('PageBalanceSheeet/datefieldCreateBS'))
 
-CustomKeywords.'homePageUtils.CreateNewBalanceSheetPopup.verifyDisplayedDate'(findTestObject('PageBalanceSheeet/datefieldCreateBS'), 
+CustomKeywords.'balanceSheetUtils.NewCreateNewBalanceSheet.verifyDisplayedDate'(findTestObject('PageBalanceSheeet/datefieldCreateBS'), 
     'XYZ')
 
 WebUI.delay(2)
