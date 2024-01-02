@@ -1,11 +1,11 @@
 {
-  "keywordFileContentHash": "C8FC5D7DC9FA883E4FA4532A2A22576B",
+  "keywordFileContentHash": "BC64BC0268240DF921E3589ABCF0EF9B",
   "keywordClasses": [
     {
       "name": "commonUtils.DatesOrderCheck",
       "keywordMethods": [
         {
-          "name": "verifyDatesinDescendingOrder",
+          "name": "verifySortingOfDatesColumn",
           "parameters": [
             {
               "name": "tableObject",
@@ -32,11 +32,25 @@
                 "genericsTypes": [],
                 "errorOnParsing": false
               }
+            },
+            {
+              "name": "sortingOrder",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * In WebTable column verify if dates are getting displayed in descending order\r\n\t * @param tableObject - Test Object for WebTable referred by OR\r\n\t * @param columnName - Column Name in which Dates are present\r\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

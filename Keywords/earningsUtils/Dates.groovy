@@ -7,7 +7,6 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-
 public class Dates {
 	/**
 	 * In WebTable column verify if dates are getting displayed in ASC or DESC order
