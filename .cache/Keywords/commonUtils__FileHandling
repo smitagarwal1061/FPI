@@ -1,12 +1,8 @@
 {
- VerifyTableCell
-  "keywordFileContentHash": "3F076754F1091088A5C922D3474F03F1",
-=======
-  "keywordFileContentHash": "948222CE8C4355BC19F4722A73CA39F8",
- master
+  "keywordFileContentHash": "87A9083F2538A4F7EC9B5930D3F1E766",
   "keywordClasses": [
     {
-      "name": "commonUtils.FileUtils",
+      "name": "commonUtils.FileHandling",
       "keywordMethods": [
         {
           "name": "verifyFileExist",
@@ -38,7 +34,7 @@
               }
             }
           ],
-          "javadoc": "/**\n\t * Verify if file exists at download path \n\t *\n\t * @param hyperlinkObject - link clicked to download file from web page\n\t * @param downloadPath - location of downloaded file\n\t */"
+          "javadoc": "/**\r\n\t * Verify if file exists at download path \r\n\t *\r\n\t * @param hyperlinkObject - link clicked to download file from web page\r\n\t * @param downloadPath - location of downloaded file\r\n\t */"
         },
         {
           "name": "moveFileToProjectReportsDirectory",
@@ -70,7 +66,7 @@
               }
             }
           ],
-          "javadoc": "/**\n\t * Move the file to project reports directory\n\t *\n\t * @param hyperlinkObject - link clicked to download file from web page\n\t * @param sourceFolder - source location of the file \n\t */"
+          "javadoc": "/**\r\n\t * Move the file to project reports directory\r\n\t *\r\n\t * @param hyperlinkObject - link clicked to download file from web page\r\n\t * @param sourceFolder - source location of the file \r\n\t */"
         }
       ]
     }

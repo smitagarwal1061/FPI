@@ -1,5 +1,8 @@
 {
+ VerifyTableCell
   "keywordFileContentHash": "5F9CCD0A0081BE922E589A0528A33F6E",
+  "keywordFileContentHash": "9D7320EB74007DEA83FC75924397DE13",
+master
   "keywordClasses": [
     {
       "name": "homePageUtils.PrimaryNavigation",
@@ -21,7 +24,11 @@
               }
             }
           ],
+ VerifyTableCell
           "javadoc": "/**\n\t * Select option from primary navigation menu\n\t * @param navigationPathInDropdown - path to navigate in primary navigation menu\n\t *\n\t */"
+=======
+          "javadoc": "/**\r\n\t * Select option from primary navigation menu\r\n\t * @param navigationPathInDropdown - path to navigate in primary navigation menu\r\n\t *\r\n\t */"
+ master
         }
       ]
     }
