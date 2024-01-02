@@ -53,7 +53,7 @@ public class PrimaryNavigation {
 					parentMenuOption=driver.findElement(By.xpath(xpath))
 					parentMenuOption.click();
 				}
-				else if(i>0) {
+				else{
 					childMenuOption=parentMenuOption.findElement(By.xpath(xpath))
 					childMenuOption.click();
 					parentMenuOption=childMenuOption
