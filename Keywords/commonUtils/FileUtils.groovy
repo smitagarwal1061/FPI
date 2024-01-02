@@ -15,7 +15,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
 
-public class FileHandling {
+public class FileUtils {
 
 	/**
 	 * Verify if file exists at download path 

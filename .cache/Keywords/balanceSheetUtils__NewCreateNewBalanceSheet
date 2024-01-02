@@ -33,11 +33,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify default date\r\n\t * @param balanceSheetDateObject - object referenced from object repository\r\n\t * @param expectedDate - \"PREV_MONTH_LASTDAY\"/any expected date in \"MM/dd/yyyy\"\r\n\t */"
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
