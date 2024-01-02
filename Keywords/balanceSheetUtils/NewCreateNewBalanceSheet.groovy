@@ -11,6 +11,8 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
+import java.text.SimpleDateFormat
+
 public class NewCreateNewBalanceSheet {
 	/**
 	 * Verify default date
@@ -31,5 +33,20 @@ public class NewCreateNewBalanceSheet {
 			WebUI.comment("Exception :: " + e.getMessage())
 			KeywordUtil.markFailedAndStop("Exception while checking date displayed");
 		}
+	}
+	
+	/**
+	 * Get current timestamp
+	 */
+	@Keyword
+	public static String getCurrentTimestamp() {
+		String timestamp;
+		try {
+			timestamp=new SimpleDateFormat("MMddyyyy_HHmmss").format(new Date());
+		}catch(Exception e) {
+			WebUI.comment("Exception :: " + e.getMessage())
+			KeywordUtil.markFailedAndStop("Exception while getting current timestamp");
+		}
+		return timestamp;
 	}
 }
