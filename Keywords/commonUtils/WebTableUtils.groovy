@@ -1,16 +1,16 @@
 package commonUtils
 
-import java.util.Map.Entry
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.google.common.collect.MapDifference
-import com.google.common.collect.Maps
 import com.kms.katalon.core.annotation.Keyword
+import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.google.common.collect.MapDifference
+import com.google.common.collect.Maps
 
 public class WebTableUtils {
 
@@ -250,4 +250,36 @@ public class WebTableUtils {
 			KeywordUtil.markFailedAndStop("Exception while fetching cell value from WebTable");
 		}
 	}
+	/**
+	 * to get the read only cells
+	 * @param tableTitle - Title of the table to locate
+	 * @param disabled   - The class that indicates a readOnly state
+	 *
+	 */
+	@Keyword(keywordObject = 'readOnly')
+	public static void verifyTableCellIsEnabled(String tableTitle, String disabled) {
+		try {
+			WebElement table = WebUiBuiltInKeywords.findWebElement(new TestObject().addProperty("title", ConditionType.EQUALS, tableTitle), 30);
+			// Iterate through rows
+			for (WebElement row : table.findElements(By.tagName("tr"))) {
+				List<WebElement> allCells = row.findElements(By.tagName("td"));
+				// Iterate through cells in each row
+				for (int i = 0; i < allCells.size(); i++) {
+					WebElement cell = allCells.get(i);
+					String cellClass = cell.getAttribute("class");
+					if (cellClass != null) {
+						if (cellClass.equals("disabled")) {
+							KeywordUtil.logInfo("Cell is in readonly mode with value " + cell.getText());
+						} else {
+							KeywordUtil.markFailedAndStop("Cell is enabled mode with value " + cell.getText());
+						}
+					}
+				}
+			}
+		} catch (NoSuchElementException e) {
+			WebUI.comment("Caught an Exception :: " + e.getMessage());
+			KeywordUtil.markFailedAndStop("Exception while verifying the cells in the table");
+		}
+	}
 }
+
