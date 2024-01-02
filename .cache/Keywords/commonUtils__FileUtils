@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "948222CE8C4355BC19F4722A73CA39F8",
+  "keywordFileContentHash": "68DDDE75342F9F9BCBACF4EB60B52858",
   "keywordClasses": [
     {
       "name": "commonUtils.FileUtils",
@@ -33,8 +33,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Verify if file exists at download path \r\n\t *\r\n\t * @param hyperlinkObject - link clicked to download file from web page\r\n\t * @param downloadPath - location of downloaded file\r\n\t */"
+          ]
         },
         {
           "name": "moveFileToProjectReportsDirectory",
@@ -65,11 +64,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Move the file to project reports directory\r\n\t *\r\n\t * @param hyperlinkObject - link clicked to download file from web page\r\n\t * @param sourceFolder - source location of the file \r\n\t */"
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
