@@ -12,6 +12,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.google.common.collect.MapDifference
 import com.google.common.collect.Maps
 
+import java.util.Map.Entry
+
 public class WebTableUtils {
 
 	/**
@@ -250,11 +252,11 @@ public class WebTableUtils {
 			KeywordUtil.markFailedAndStop("Exception while fetching cell value from WebTable");
 		}
 	}
-	
+
 	/**
-	 * to verify if Table cells are in readOnlyMode
-	 * @param tableTitle - Title of the table to locate
-	 * @param attributeClassValue - class attribute that indicates a read-only state for a cell in the web table.
+	 * Verify web table cells are in read only mode i.e. disabled for editing
+	 * @param tableTitle - title of the table to locate
+	 * @param attributeClassValue - class attribute that indicates a read-only state for a cell in the web table
 	 */
 	@Keyword(keywordObject = 'WebTable')
 	public static void verifyTableCellIsDisabled(String tableTitle, String attributeClassValue) {
@@ -273,8 +275,8 @@ public class WebTableUtils {
 				}
 			}
 		} catch (NoSuchElementException e) {
-			WebUI.comment("Caught an Exception :: " + e.getMessage());
-			KeywordUtil.markFailedAndStop("Exception while verifying the cells in the table");
+			WebUI.comment("Exception :: " + e.getMessage());
+			KeywordUtil.markFailedAndStop("Exception while verifying cells in the table");
 		}
 	}
 }
