@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "461894B474ED08E3A37CF99E6B5AB6DD",
+  "keywordFileContentHash": "205AABFB499D22D742EBFCD53EC06BFE",
   "keywordClasses": [
     {
       "name": "commonUtils.WebTableUtils",
@@ -106,6 +106,38 @@
             }
           ],
           "javadoc": ""
+        },
+        {
+          "name": "verifyTableCellIsEnabled",
+          "parameters": [
+            {
+              "name": "tableTitle",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "disabled",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n\t * to get the read only cells\r\n\t * @param tableTitle - Title of the table to locate\r\n\t * @param disabled   - The class that indicates a readOnly state\r\n\t *\r\n\t */"
         }
       ]
     }
