@@ -250,14 +250,14 @@ public class WebTableUtils {
 			KeywordUtil.markFailedAndStop("Exception while fetching cell value from WebTable");
 		}
 	}
+	
 	/**
-	 * to get the read only cells
+	 * to verify if Table cells are in readOnlyMode
 	 * @param tableTitle - Title of the table to locate
-	 * @param disabled   - The class that indicates a readOnly state
-	 *
+	 * @param attributeClassValue - class attribute that indicates a read-only state for a cell in the web table.
 	 */
-	@Keyword(keywordObject = 'readOnly')
-	public static void verifyTableCellIsEnabled(String tableTitle, String disabled) {
+	@Keyword(keywordObject = 'WebTable')
+	public static void verifyTableCellIsDisabled(String tableTitle, String attributeClassValue) {
 		try {
 			WebElement table = WebUiBuiltInKeywords.findWebElement(new TestObject().addProperty("title", ConditionType.EQUALS, tableTitle), 30);
 			// Iterate through rows
@@ -267,12 +267,8 @@ public class WebTableUtils {
 				for (int i = 0; i < allCells.size(); i++) {
 					WebElement cell = allCells.get(i);
 					String cellClass = cell.getAttribute("class");
-					if (cellClass != null) {
-						if (cellClass.equals("disabled")) {
-							KeywordUtil.logInfo("Cell is in readonly mode with value " + cell.getText());
-						} else {
-							KeywordUtil.markFailedAndStop("Cell is enabled mode with value " + cell.getText());
-						}
+					if (cellClass != null && !cellClass.equals("disabled")) {
+						KeywordUtil.markFailedAndStop("Cell is enabled mode with value " + cell.getText());
 					}
 				}
 			}
