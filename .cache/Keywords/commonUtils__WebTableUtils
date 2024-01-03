@@ -72,7 +72,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Compare Web Table data\r\n\t * @param primaryKeyName - WebTable primary key\r\n\t * @param primaryWebTableObjectOne \t- Primary WebTable object one referenced from OR\r\n\t * @param primaryWebTableObjectTwo \t- Primary WebTable object two referenced from OR\r\n\t * @param secondaryWebTableObjectOne - Secondary WebTable object one referenced from OR\r\n\t * @param secondaryWebTableObjectTwo - Secondary WebTable object two referenced from OR\r\n\t */"
         },
         {
           "name": "getWebTableCellValue",
@@ -142,10 +143,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
