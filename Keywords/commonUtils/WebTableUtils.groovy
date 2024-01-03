@@ -1,16 +1,18 @@
 package commonUtils
 
-import java.util.Map.Entry
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.google.common.collect.MapDifference
-import com.google.common.collect.Maps
 import com.kms.katalon.core.annotation.Keyword
+import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.google.common.collect.MapDifference
+import com.google.common.collect.Maps
+
+import java.util.Map.Entry
 
 public class WebTableUtils {
 
@@ -178,7 +180,7 @@ public class WebTableUtils {
 		try {
 			String rowData = null;
 			int count = 0
-			
+
 			// Get all rows
 			List<WebElement> rows = tableElement.findElements(By.tagName("tr"));
 
@@ -194,7 +196,7 @@ public class WebTableUtils {
 				count++;
 			}
 			tableData.add(rowData);
-			
+
 			//Get data of table rows
 			for (int i = 1; i < rows.size(); i++) {
 				// Get all cells in the current row
@@ -250,4 +252,32 @@ public class WebTableUtils {
 			KeywordUtil.markFailedAndStop("Exception while fetching cell value from WebTable");
 		}
 	}
+
+	/**
+	 * Verify web table cells are in read only mode i.e. disabled for editing
+	 * @param tableTitle - title of the table to locate
+	 * @param attributeClassValue - class attribute that indicates a read-only state for a cell in the web table
+	 */
+	@Keyword(keywordObject = 'WebTable')
+	public static void verifyTableCellIsDisabled(String tableTitle, String attributeClassValue) {
+		try {
+			WebElement table = WebUiBuiltInKeywords.findWebElement(new TestObject().addProperty("title", ConditionType.EQUALS, tableTitle), 30);
+			// Iterate through rows
+			for (WebElement row : table.findElements(By.tagName("tr"))) {
+				List<WebElement> allCells = row.findElements(By.tagName("td"));
+				// Iterate through cells in each row
+				for (int i = 0; i < allCells.size(); i++) {
+					WebElement cell = allCells.get(i);
+					String cellClass = cell.getAttribute("class");
+					if (cellClass != null && !cellClass.equals("disabled")) {
+						KeywordUtil.markFailedAndStop("Cell is enabled mode with value " + cell.getText());
+					}
+				}
+			}
+		} catch (NoSuchElementException e) {
+			WebUI.comment("Exception :: " + e.getMessage());
+			KeywordUtil.markFailedAndStop("Exception while verifying cells in the table");
+		}
+	}
 }
+
