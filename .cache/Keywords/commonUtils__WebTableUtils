@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "461894B474ED08E3A37CF99E6B5AB6DD",
+  "keywordFileContentHash": "1704E28876401EDC68DD047CF830913D",
   "keywordClasses": [
     {
       "name": "commonUtils.WebTableUtils",
@@ -46,8 +46,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": "/**\r\n\t * Compare Web Table data\r\n\t * @param primaryKeyName - WebTable primary key\r\n\t * @param webTableObjectOne - WebTable1 object referenced from OR\r\n\t * @param webTableObjectTwo - WebTable2 object referenced from OR\r\n\t */"
+          ]
         },
         {
           "name": "getWebTableCellValue",
@@ -104,11 +103,41 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
+        },
+        {
+          "name": "verifyTableCellIsDisabled",
+          "parameters": [
+            {
+              "name": "tableTitle",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "attributeClassValue",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
