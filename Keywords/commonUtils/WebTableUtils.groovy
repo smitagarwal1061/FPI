@@ -17,15 +17,17 @@ public class WebTableUtils {
 	/**
 	 * Compare Web Table data
 	 * @param primaryKeyName - WebTable primary key
-	 * @param webTableObjectOne - WebTable1 object referenced from OR
-	 * @param webTableObjectTwo - WebTable2 object referenced from OR
+	 * @param primaryWebTableObjectOne 	- Primary WebTable object one referenced from OR
+	 * @param primaryWebTableObjectTwo 	- Primary WebTable object two referenced from OR
+	 * @param secondaryWebTableObjectOne - Secondary WebTable object one referenced from OR
+	 * @param secondaryWebTableObjectTwo - Secondary WebTable object two referenced from OR
 	 */
 	@Keyword(keywordObject = "WebTable")
-	public static void compareWebTable(String primaryKeyName, TestObject webTableObjectOne, TestObject webTableObjectTwo) {
+	public static void compareWebTable(String primaryKeyName, TestObject primaryWebTableObjectOne, TestObject primaryWebTableObjectTwo,TestObject secondaryWebTableObjectOne, TestObject secondaryWebTableObjectTwo) {
 		try {
 			//Get WebTable records as Map
-			Map<String, Map<String, String>> actMap=getWebTableAsMap(webTableObjectOne, primaryKeyName);
-			Map<String, Map<String, String>> expMap=getWebTableAsMap(webTableObjectTwo, primaryKeyName);
+			Map<String, Map<String, String>> actMap=getWebTableAsMap(primaryWebTableObjectOne,primaryWebTableObjectTwo, primaryKeyName);
+			Map<String, Map<String, String>> expMap=getWebTableAsMap(secondaryWebTableObjectOne,secondaryWebTableObjectTwo, primaryKeyName);
 			if (actMap.size() != expMap.size()) {
 				KeywordUtil.markFailedAndStop("Record count MISMATCH :: " + "Actual record count :: " + actMap.size()
 						+ " Expected record count :: " + expMap.size())
@@ -133,15 +135,16 @@ public class WebTableUtils {
 
 	/**
 	 * Get the WebTable as Map
-	 * @param webTableObject - WebTable object referenced from OR
+	 * @param webTableObjectOne - WebTable One object referenced from OR
+	 * @param webTableObjectTwo - WebTable Two object referenced from OR
 	 * @param keyName - PrimaryKey for WebTable
 	 */
-	public static Map<String, Map<String, String>> getWebTableAsMap(TestObject webTableObject, String keyName) {
+	public static Map<String, Map<String, String>> getWebTableAsMap(TestObject webTableObjectOne, TestObject webTableObjectTwo, String keyName) {
 		Map<String, Map<String, String>> webTableRecords = new LinkedHashMap();
 		int recordCounter = 0;
 		try {
 			//Get the WebTable into a List of String
-			List<String> webTableData = readWebTableData(webTableObject);
+			List<String> webTableData = readWebTableData(webTableObjectOne,webTableObjectTwo);
 			String colNames = webTableData.get(0);
 			String[] arrColName = colNames.split(",", -1);
 			int columnCount = arrColName.length;
@@ -170,21 +173,41 @@ public class WebTableUtils {
 
 	/**
 	 * Read the WebTable Data records
-	 * @param webTableObject - TestObject for WebTable referred by OR
+	 * @param webTableObjectOne - TestObject for WebTable One referred by OR
+	 * @param webTableObjectTwo - TestObject for WebTable Two referred by OR
 	 */
-	public static List<String> readWebTableData(TestObject webTableObject) {
-		WebElement tableElement = WebUI.findWebElement(webTableObject, 0)
+	public static List<String> readWebTableData(TestObject webTableObjectOne, TestObject webTableObjectTwo) {
+		WebElement tableElementOne = WebUI.findWebElement(webTableObjectOne, 0)
+		WebElement tableElementTwo = WebUI.findWebElement(webTableObjectTwo, 0)
 		List<String> tableData = new ArrayList<>();
 		try {
 			String rowData = null;
 			int count = 0
-			
-			// Get all rows
-			List<WebElement> rows = tableElement.findElements(By.tagName("tr"));
 
-			//Get all headers into list
-			List<WebElement> headers = rows.get(0).findElements(By.tagName("th"));
-			for (WebElement header : headers) {
+			// Get all rows from WebTableOne
+			List<WebElement> rowsWebTableOne = tableElementOne.findElements(By.tagName("tr"));
+			// Get all rows from WebTableTwo
+			List<WebElement> rowsWebTableTwo = tableElementTwo.findElements(By.tagName("tr"));
+
+			//Compare WebTableOne and WebTableTwo Row records
+			if (rowsWebTableOne.size() != rowsWebTableTwo.size()) {
+				KeywordUtil.markFailedAndStop("Record count MISMATCH :: " + "WebTable One record count :: " + rowsWebTableOne.size()
+						+ ", WebTable Two record count :: " + rowsWebTableOne.size())}
+
+			//Get all headers into list for WebTableOne and WebTableTwo
+			List<WebElement> headersWebTableOne = rowsWebTableOne.get(0).findElements(By.tagName("th"));
+			List<WebElement> headersWebTableTwo = rowsWebTableTwo.get(0).findElements(By.tagName("th"));
+
+			for (WebElement header : headersWebTableOne) {
+				// Extract data from each header and add it to the list
+				if (count == 0) {
+					rowData = header.getText();
+				} else {
+					rowData = rowData + "," + header.getText();
+				}
+				count++;
+			}
+			for (WebElement header : headersWebTableTwo) {
 				// Extract data from each header and add it to the list
 				if (count == 0) {
 					rowData = header.getText();
@@ -194,13 +217,24 @@ public class WebTableUtils {
 				count++;
 			}
 			tableData.add(rowData);
-			
-			//Get data of table rows
-			for (int i = 1; i < rows.size(); i++) {
-				// Get all cells in the current row
+
+			//Get all the data of rows from WebTableOne and WebTableTwo
+			for (int i = 1; i < rowsWebTableOne.size(); i++) {
+				// Get all cells in the current row for WebTableOne
 				count=0;
-				List<WebElement> cells = rows.get(i).findElements(By.tagName("td"));
-				for (WebElement cell : cells) {
+				List<WebElement> cellsWebTableOne = rowsWebTableOne.get(i).findElements(By.tagName("td"));
+				for (WebElement cell : cellsWebTableOne) {
+					// Extract data from each cell and add it to the list
+					if (count == 0) {
+						rowData = cell.getText();
+					} else {
+						rowData = rowData + "," + cell.getText();
+					}
+					count++;
+				}
+				// Get all cells in the current row for WebTableTwo
+				List<WebElement> cellsWebTableTwo = rowsWebTableTwo.get(i).findElements(By.tagName("td"));
+				for (WebElement cell : cellsWebTableTwo) {
 					// Extract data from each cell and add it to the list
 					if (count == 0) {
 						rowData = cell.getText();
@@ -222,15 +256,16 @@ public class WebTableUtils {
 	@Keyword(keywordObject = "WebTable")
 	/**
 	 * Get Web table cell value
-	 * @param webTableObject - WebTable object referenced from OR
+	 * @param webTableObjectOne - WebTable object One referenced from OR
+	 * @param webTableObjectTwo - WebTable object Two referenced from OR
 	 * @param primaryKey - primary key of WebTable
 	 * @param primaryKeyValue - primary key value of row
 	 * @param columnName  - column to fetch cell value
 	 */
-	public static String getWebTableCellValue(TestObject webTableObject,String primaryKey,String rowName,String columnName) {
+	public static String getWebTableCellValue(TestObject webTableObjectOne,TestObject webTableObjectTwo,String primaryKey,String rowName,String columnName) {
 		try {
 			String cellValue;
-			Map<String, Map<String, String>> webTableMap = getWebTableAsMap(webTableObject, primaryKey);
+			Map<String, Map<String, String>> webTableMap = getWebTableAsMap(webTableObjectOne,webTableObjectTwo, primaryKey);
 			//Iterating through Webtable maps
 			for (Entry<String, Map<String, String>> entry : webTableMap.entrySet()) {
 				if (entry.getKey().equals(rowName)) {

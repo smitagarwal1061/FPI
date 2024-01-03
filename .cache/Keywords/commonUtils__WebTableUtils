@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "A9EF83C214D3FC78CBFFEC7B9AE4CC2C",
+  "keywordFileContentHash": "0956AC4AAAA8CC2C553B8DD3F7A1F78B",
   "keywordClasses": [
     {
       "name": "commonUtils.WebTableUtils",
@@ -21,6 +21,63 @@
               }
             },
             {
+              "name": "primaryWebTableObjectOne",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "primaryWebTableObjectTwo",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "secondaryWebTableObjectOne",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "secondaryWebTableObjectTwo",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
+                "unresolvedClassName": "TestObject",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "getWebTableCellValue",
+          "parameters": [
+            {
               "name": "webTableObjectOne",
               "initialExpression": "",
               "type": {
@@ -35,25 +92,6 @@
             },
             {
               "name": "webTableObjectTwo",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ],
-          "javadoc": "/**\r\n\t * Compare Web Table data\r\n\t * @param primaryKeyName - WebTable primary key\r\n\t * @param webTableObjectOne - WebTable1 object referenced from OR\r\n\t * @param webTableObjectTwo - WebTable2 object referenced from OR\r\n\t */"
-        },
-        {
-          "name": "getWebTableCellValue",
-          "parameters": [
-            {
-              "name": "webTableObject",
               "initialExpression": "",
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",
@@ -104,11 +142,10 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
