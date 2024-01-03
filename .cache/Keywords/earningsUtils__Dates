@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "4AC2DE69A32EEB286C7E609FA2847757",
+  "keywordFileContentHash": "33DC82D84E9490F8563886FE0324AD8E",
   "keywordClasses": [
     {
       "name": "earningsUtils.Dates",
@@ -47,7 +47,7 @@
               }
             }
           ],
-          "javadoc": "/**\r\n\t * In WebTable column verify if dates are getting displayed in ASC or DESC order\r\n\t * @param tableObject - Test Object for WebTable referred by OR\r\n\t * @param columnName - Column Name in which Dates are present\r\n\t */"
+          "javadoc": "/**\r\n\t * Verify sorting order of WebTable column with dates i.e. Ascending or Descending\r\n\t * @param tableObject - test Object for WebTable referred from OR\r\n\t * @param columnName - column Name in which Dates are present\r\n\t * @param sortingOrder - sorting order i.e. Ascending or Descending\r\n\t */"
         }
       ]
     }
