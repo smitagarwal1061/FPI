@@ -1,20 +1,24 @@
-package earningsUtils
+package balanceSheetUtils
 import java.text.SimpleDateFormat
+
 import org.openqa.selenium.By
 import org.openqa.selenium.WebElement
+
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-public class Dates {
+
+
+class ConsolidationsMaintenance {
 	/**
 	 * Verify sorting order of WebTable column with dates i.e. Ascending or Descending
 	 * @param tableObject - test Object for WebTable referred from OR
 	 * @param columnName - column Name in which Dates are present
 	 * @param sortingOrder - sorting order i.e. Ascending or Descending
 	 */
-	@Keyword(keywordObject = "WebTable")
+	@Keyword(keywordObject = "BalanceSheet")
 	public static void verifySortingOfDatesColumn(TestObject tableObject, String columnName, String sortingOrder) {
 		try {
 			WebElement tableElement = WebUI.findWebElement(tableObject, 2);

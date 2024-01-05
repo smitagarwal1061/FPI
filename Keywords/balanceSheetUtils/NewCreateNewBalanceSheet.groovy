@@ -17,7 +17,7 @@ public class NewCreateNewBalanceSheet {
 	 * @param balanceSheetDateObject - object referenced from object repository
 	 * @param expectedDate - "PREV_MONTH_LASTDAY"/any expected date in "MM/dd/yyyy"
 	 */
-	@Keyword(keywordObject = "HomePage")
+	@Keyword(keywordObject = "BalanceSheet")
 	public static void verifyDefaultDate(TestObject balanceSheetDateObject, String expectedDate) {
 		try {
 			DateTimeFormatter pattern = DateTimeFormatter.ofPattern("MM/dd/yyyy");
