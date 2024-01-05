@@ -22,7 +22,7 @@ class ConsolidationsMaintenance {
 	/**
 	 * Refresh browser
 	 */
-	@Keyword(keywordObject = "EarningsConsolidationsMaintenance")
+	@Keyword(keywordObject = "Earnings")
 	def refreshBrowser() {
 		KeywordUtil.logInfo("Refreshing")
 		WebDriver webDriver = DriverFactory.getWebDriver()
