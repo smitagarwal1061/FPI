@@ -1,36 +1,14 @@
 {
-  "keywordFileContentHash": "5857E8DEB4FDA8F00B431672C3615C52",
+  "keywordFileContentHash": "D10C5F98A8C8268CD72C09FA3731D336",
   "keywordClasses": [
     {
-      "name": "earningsUtils.ConsolidationsMaintenance",
+      "name": "balanceSheetUtils.ConsolidationsMaintenance",
       "keywordMethods": [
         {
-          "name": "refreshBrowser",
-          "parameters": []
-        },
-        {
-          "name": "clickElement",
+          "name": "verifySortingOfDatesColumn",
           "parameters": [
             {
-              "name": "to",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "getHtmlTableRows",
-          "parameters": [
-            {
-              "name": "table",
+              "name": "tableObject",
               "initialExpression": "",
               "type": {
                 "fullClassName": "com.kms.katalon.core.testobject.TestObject",
@@ -43,7 +21,20 @@
               }
             },
             {
-              "name": "outerTagName",
+              "name": "columnName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "sortingOrder",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.String",
