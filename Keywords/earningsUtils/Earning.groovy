@@ -18,6 +18,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 
+import commonUtils.WebTableUtils
 import internal.GlobalVariable
 
 import org.openqa.selenium.WebElement
@@ -79,5 +80,31 @@ class Earning {
 		WebElement mailList = WebUiBuiltInKeywords.findWebElement(table)
 		List<WebElement> selectedRows = mailList.findElements(By.xpath("./" + outerTagName + "/tr"))
 		return selectedRows
+	}
+
+	/**
+	 * Get WebTable data total
+	 * @param webTableObjectOne - WebTable object One referenced from OR
+	 * @param webTableObjectTwo - WebTable object Two referenced from OR
+	 * @param primaryKey 		- primary key of WebTable
+	 * @param columnName 		- column to fetch cell value
+	 */
+	@Keyword
+	public static int calculateTotal(TestObject webTableObjectOne,TestObject webTableObjectTwo,String primaryKey, String columnName) {
+		int total = 0;
+		int count = 0;
+
+		Map<String, Map<String, String>> webTableMap=WebTableUtils.getWebTableAsMap(webTableObjectOne, webTableObjectTwo, primaryKey);
+		for (Map<String, String> values : webTableMap.values()) {
+			if (count != 0) {
+				String cellValue = values.get(columnName);
+				if (cellValue != null) {
+					int value = Integer.parseInt(cellValue);
+					total += value;
+				}
+			}
+			count++;
+		}
+		return total;
 	}
 }

@@ -28,6 +28,12 @@ String cellValue = CustomKeywords.'commonUtils.WebTableUtils.getWebTableCellValu
 
 println(cellValue)
 
+int total=CustomKeywords.'earningsUtils.Earning.calculateTotal'(findTestObject('Object Repository/WebTable/webTable2'), findTestObject('Object Repository/WebTable/webTable2'), 'Name', 'Amount')
+
+println(total)
+
 CustomKeywords.'commonUtils.WebTableUtils.compareWebTable'('Name', findTestObject('Object Repository/WebTable/webTable3'), 
     findTestObject('Object Repository/WebTable/webTable3'), findTestObject('WebTable/webTable2'), findTestObject('WebTable/webTable2'))
+
+
 
