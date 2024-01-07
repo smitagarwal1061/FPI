@@ -1,49 +1,14 @@
 {
-  "keywordFileContentHash": "5857E8DEB4FDA8F00B431672C3615C52",
+  "keywordFileContentHash": "DF6A587423DA0F3385921F6B1B17310E",
   "keywordClasses": [
     {
-      "name": "earningsUtils.ConsolidationsMaintenance",
+      "name": "commonUtils.WebTableDataComparison",
       "keywordMethods": [
         {
-          "name": "refreshBrowser",
-          "parameters": []
-        },
-        {
-          "name": "clickElement",
+          "name": "compareWebTableElements",
           "parameters": [
             {
-              "name": "to",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "getHtmlTableRows",
-          "parameters": [
-            {
-              "name": "table",
-              "initialExpression": "",
-              "type": {
-                "fullClassName": "com.kms.katalon.core.testobject.TestObject",
-                "unresolvedClassName": "TestObject",
-                "isArray": false,
-                "isGnericsPlaceHolder": false,
-                "hasImmutableClassName": false,
-                "genericsTypes": [],
-                "errorOnParsing": false
-              }
-            },
-            {
-              "name": "outerTagName",
+              "name": "primaryKeyName",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.String",
@@ -54,11 +19,38 @@
                 "genericsTypes": [],
                 "errorOnParsing": false
               }
+            },
+            {
+              "name": "webTable1",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "org.openqa.selenium.WebElement",
+                "unresolvedClassName": "WebElement",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "webTable2",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "org.openqa.selenium.WebElement",
+                "unresolvedClassName": "WebElement",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
             }
-          ]
+          ],
+          "javadoc": "/**\r\n\t * Compare Data of Two WebTables\r\n\t * @param PrimaryKey of WebTable\r\n\t * @param WebElement for WebTable 1\r\n\t * @param WebElement for WebTable 2\r\n\t */"
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
